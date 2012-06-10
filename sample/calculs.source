@@ -1,0 +1,19 @@
+programme calculs
+
+fonction factoriel(n)
+{
+  si n > 1 alors
+    renvoyer n*factoriel(n-1);
+  sinon ;
+    renvoyer 1;
+}
+
+fonction principale()
+entier a;
+{
+  a = lire();
+  ecrire(factoriel(a));
+  renvoyer 0;
+}
+
+finprog

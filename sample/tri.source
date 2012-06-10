@@ -1,0 +1,67 @@
+programme tri
+
+tableau liste[1000];
+
+// afficher les n premiers elements du tableau liste
+
+fonction afficher_liste(n)
+  entier i;
+{
+  i = 0;
+  tantque i<n
+  {
+    ecrire(liste[i]);
+    i = i + 1;
+  }
+}
+
+
+// permuter les valeurs des cases liste[i] et liste[j]
+
+fonction permuter(i,j)
+  entier temp;
+{
+  temp = liste[i];
+  liste[i] = liste[j];
+  liste[j] = temp;
+}
+
+
+// le bien connu tri a bulle sur les n premiers elements de liste
+
+fonction tri_bulle(n)
+  entier k;
+  entier i;
+{
+  k = n - 1;
+  tantque k>0
+  {
+    i = 0;
+    tantque i<k {
+      si liste[i]>liste[i+1] alors
+	appel permuter(i, i+1);
+      i = i + 1;
+    }
+    k = k - 1;
+  }
+}
+
+
+fonction principale()
+  entier n;
+  entier i;
+{
+  n = lire();
+  i = 0;
+  tantque i<n
+  {
+    liste[i] = lire();
+    i = i + 1;
+  }
+  appel tri_bulle(n);
+  appel afficher_liste(n);
+  renvoyer 0;
+}
+
+
+finprog

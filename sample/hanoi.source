@@ -1,0 +1,28 @@
+programme hanoi
+
+
+fonction deplacer(a, b) 
+{
+    ecrire(1000 * a + b);
+}
+
+
+fonction hanoi(n, a, b, c) 
+{
+    si n != 0 alors 
+    {
+        appel hanoi(n - 1, a, c, b);
+        appel deplacer(a, b);
+        appel hanoi(n - 1, c, b, a);
+    }
+}
+    
+fonction principale() 
+    entier n;
+{    
+    n = lire();
+    appel hanoi(n, 1, 2, 3);
+    renvoyer 0;
+}
+
+finprog
